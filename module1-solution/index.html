@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app='LunchCheck'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body { font-size: 1.2em; }</style>
+    <title>Count Number of Words</title>
+  </head>
+  <body>
+    <h1>Lunch Check</h1>
+    <div ng-controller='LunchCheckController'>
+      <input   style="border: 2px solid {{ color }};"  type="text" ng-model="textValue" placeholder="food items">
+      <button ng-click="get_values()">Check If Too Much</button> <br>
+      <p style="color:{{ color }};">{{ message }}</text>
+    </div>
+
+
+  </body>
+</html>
