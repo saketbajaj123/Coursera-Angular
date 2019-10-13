@@ -6,6 +6,7 @@
     <script src="app.js"></script>
     <style>
     body { font-size: 3em; }
+    p { font-size: 0.5em; }
     table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
@@ -26,10 +27,12 @@
     <div ng-controller='DisplayItemsController as ctrl'>
       <input type = "text" ng-model = "ctrl.searchTerm">
 
-      <button ng-click = 'ctrl.narrowItDown(ctrl.searchTerm)'>Narrow it down for me</button>
+      <button ng-click = 'ctrl.narrowItDown()'>Narrow it down for me</button>
 
       <get-my-table ng-if = ctrl.itemQtyGTOne()></get-my-table>
-      
+
+      <br><p ng-if =  "!ctrl.itemQtyGTOne() && !ctrl.undefinedValue()"  >Nothing found!</p>
+
     </div>
 
   </body>
