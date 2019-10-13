@@ -34,9 +34,8 @@ function DisplayItemsController(RestaurantItemsService){
     })
 
 
-    ctrl.narrowItDown = function(searchTerm){
+    ctrl.narrowItDown = function(){
       ctrl.dummyVar = ctrl.searchTerm
-      console.log(ctrl.dummyVar)
       if (ctrl.searchTerm == undefined || ctrl.searchTerm == ''){
         ctrl.narrowedItems = [];
         return;
@@ -46,7 +45,7 @@ function DisplayItemsController(RestaurantItemsService){
               ctrl.narrowedItems = []
               for (var i = 0; i < ctrl.allItems.length; i++) {
                 var description = ctrl.allItems[i].description;
-                if (description.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+                if (description.toLowerCase().indexOf(ctrl.searchTerm.toLowerCase()) > -1) {
                   ctrl.narrowedItems.push(ctrl.allItems[i]);
               }
             }
@@ -58,8 +57,8 @@ function DisplayItemsController(RestaurantItemsService){
 
     ctrl.itemQtyGTOne = function (){
 
-      if (ctrl.narrowedItems === undefined || ctrl.dummyVar == ''){
-        return;
+      if (ctrl.narrowedItems === undefined){
+        return false;
       }
       else {
         if (ctrl.narrowedItems.length > 0){
@@ -70,6 +69,19 @@ function DisplayItemsController(RestaurantItemsService){
         }
       }
     };
+
+    ctrl.undefinedValue = function (){
+      if (ctrl.narrowedItems === undefined){
+        return true;
+      }
+      else{
+        return false;
+      }
+    };
+
+    ctrl.removeItem = function(index){
+      ctrl.narrowedItems.splice(index,1)
+    }
 
   };
 
