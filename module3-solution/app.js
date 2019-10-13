@@ -21,7 +21,7 @@ function DisplayItemsController(RestaurantItemsService){
   var allItems = [];
   var narrowedItems = [];
   var promise  = RestaurantItemsService.getRestaurantData();
-
+  var dummyVar = ''
   promise
     .then(function(response){
         ctrl.allItems = response.data['menu_items'];
@@ -35,8 +35,11 @@ function DisplayItemsController(RestaurantItemsService){
 
 
     ctrl.narrowItDown = function(searchTerm){
-      if (searchTerm == 'undefined'){
+      ctrl.dummyVar = ctrl.searchTerm
+      if (ctrl.searchTerm == undefined || ctrl.searchTerm == ''){
+        ctrl.narrowedItems = [];
         return;
+
       }
       else {
               ctrl.narrowedItems = []
@@ -54,7 +57,7 @@ function DisplayItemsController(RestaurantItemsService){
 
     ctrl.itemQtyGTOne = function (){
 
-      if (ctrl.narrowedItems === undefined){
+      if (ctrl.narrowedItems === undefined || ctrl.dummyVar == ''){
         return;
       }
       else {
