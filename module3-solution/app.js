@@ -36,6 +36,7 @@ function DisplayItemsController(RestaurantItemsService){
 
     ctrl.narrowItDown = function(searchTerm){
       ctrl.dummyVar = ctrl.searchTerm
+      console.log(ctrl.dummyVar)
       if (ctrl.searchTerm == undefined || ctrl.searchTerm == ''){
         ctrl.narrowedItems = [];
         return;
