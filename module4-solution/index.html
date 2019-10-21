@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='Restaurant'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="router.js"></script>
+
+
+    <title>Shopping List</title>
+
+  </head>
+  <body>
+
+    <div >
+
+      <ui-view></ui-view>
+
+
+
+<!--
+<p>{{ctrl.allItems}}</p>
+      <input type = "text" ng-model = "ctrl.searchTerm">
+
+      <button ng-click = 'ctrl.narrowItDown()'>Narrow it down for me</button>
+
+      <get-my-table ng-if = ctrl.itemQtyGTOne()></get-my-table>
+
+      <br><p ng-if =  "!ctrl.itemQtyGTOne() && !ctrl.undefinedValue()"  >Nothing found!</p>
+-->
+    </div>
+
+  </body>
+</html>

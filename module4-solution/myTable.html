@@ -1,0 +1,19 @@
+<table >
+  <col width="200">
+  <col width="120">
+  <col width="1000">
+  <col width = "120">
+
+  <tr>
+    <th>Name</th>
+    <th>Short Name</th>
+    <th>Description</th>
+    <th>Like it?</th>
+  </tr>
+  <tr ng-repeat="item in ctrl.narrowedItems">
+    <td>{{item.name}}</td>
+    <td>{{item.short_name}}</td>
+    <td>{{item.description}}</td>
+    <td><button ng-click="ctrl.removeItem($index)">Don't want this one!</button></td>
+  </tr>
+</table>

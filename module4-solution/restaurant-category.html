@@ -1,0 +1,11 @@
+<div class = 'category-list' style="float:left">
+<ul>
+  <li ng-repeat = "item in category.allItems" >
+    <a ui-sref="home.cate.items({category:item.short_name})" >
+    {{item.name}}
+    </a>
+  </li>
+</ul>
+</div>
+
+<ui-view></ui-view>
